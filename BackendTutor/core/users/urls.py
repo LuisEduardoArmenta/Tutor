@@ -10,6 +10,7 @@ from .views import (
     FinalizarEvaluacionView,
     ObtenerEstadoEvaluacionView
 )
+from . import views
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
@@ -21,4 +22,6 @@ urlpatterns = [
     path('evaluacion/responder/', ResponderPreguntaView.as_view(), name='responder_pregunta'),
     path('evaluacion/finalizar/', FinalizarEvaluacionView.as_view(), name='finalizar_evaluacion'),
     path('evaluacion/estado/', ObtenerEstadoEvaluacionView.as_view(), name='obtener_estado'),
+    path('auth/forgot-password/', views.ForgotPasswordView.as_view(), name='forgot-password'),
+    path('auth/reset-password/', views.ResetPasswordView.as_view(), name='reset-password'),
 ]

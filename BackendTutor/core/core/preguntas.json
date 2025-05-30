@@ -1,0 +1,185 @@
+[
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 1,
+      "fields": {
+        "nivel": "PRINCIPIANTE",
+        "pregunta": "¿Qué se necesita para que un programa en C++ funcione correctamente?",
+        "opcion_a": "Un archivo HTML",
+        "opcion_b": "Una función main",
+        "opcion_c": "Una función print",
+        "opcion_d": "Una clase",
+        "respuesta_correcta": "B",
+        "explicacion": "La función 'main' es el punto de entrada en todo programa en C++."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 2,
+      "fields": {
+        "nivel": "PRINCIPIANTE",
+        "pregunta": "¿Qué palabra se usa para mostrar texto en C++?",
+        "opcion_a": "echo",
+        "opcion_b": "print",
+        "opcion_c": "cout",
+        "opcion_d": "text",
+        "respuesta_correcta": "C",
+        "explicacion": "'cout' se usa junto con '<<' para mostrar información por pantalla."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 3,
+      "fields": {
+        "nivel": "PRINCIPIANTE",
+        "pregunta": "¿Cómo se termina una instrucción en C++?",
+        "opcion_a": "Con punto y coma ';'",
+        "opcion_b": "Con coma ','",
+        "opcion_c": "Con punto '.'",
+        "opcion_d": "No es necesario",
+        "respuesta_correcta": "A",
+        "explicacion": "En C++, cada instrucción termina con punto y coma."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 4,
+      "fields": {
+        "nivel": "PRINCIPIANTE",
+        "pregunta": "¿Cuál de estas es una variable válida en C++?",
+        "opcion_a": "int 2numero;",
+        "opcion_b": "int numero;",
+        "opcion_c": "int *;",
+        "opcion_d": "int return;",
+        "respuesta_correcta": "B",
+        "explicacion": "'numero' es un nombre válido. No puede empezar con número ni usar palabras reservadas."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 5,
+      "fields": {
+        "nivel": "INTERMEDIO",
+        "pregunta": "¿Qué hace el operador '==' en C++?",
+        "opcion_a": "Asigna un valor",
+        "opcion_b": "Compara si dos valores son iguales",
+        "opcion_c": "Concatena cadenas",
+        "opcion_d": "Resta valores",
+        "respuesta_correcta": "B",
+        "explicacion": "'==' compara si dos valores son iguales en C++."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 6,
+      "fields": {
+        "nivel": "INTERMEDIO",
+        "pregunta": "¿Para qué sirve la instrucción 'if'?",
+        "opcion_a": "Para repetir código",
+        "opcion_b": "Para declarar funciones",
+        "opcion_c": "Para ejecutar código si se cumple una condición",
+        "opcion_d": "Para importar bibliotecas",
+        "respuesta_correcta": "C",
+        "explicacion": "El 'if' permite tomar decisiones en base a condiciones lógicas."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 7,
+      "fields": {
+        "nivel": "INTERMEDIO",
+        "pregunta": "¿Qué hace este fragmento?:\n\n```cpp\nfor(int i=0; i<3; i++) {\n  cout << i;\n}\n```",
+        "opcion_a": "Muestra 123",
+        "opcion_b": "Muestra 012",
+        "opcion_c": "Muestra 345",
+        "opcion_d": "Muestra 321",
+        "respuesta_correcta": "B",
+        "explicacion": "El ciclo imprime los valores de i desde 0 hasta 2 (excluye 3)."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 8,
+      "fields": {
+        "nivel": "INTERMEDIO",
+        "pregunta": "¿Cuál es la salida de: `cout << 5 + 3 * 2;`?",
+        "opcion_a": "16",
+        "opcion_b": "11",
+        "opcion_c": "10",
+        "opcion_d": "13",
+        "respuesta_correcta": "B",
+        "explicacion": "Primero se evalúa 3 * 2 = 6, luego 5 + 6 = 11."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 9,
+      "fields": {
+        "nivel": "AVANZADO",
+        "pregunta": "¿Qué tipo de valor devuelve una función declarada como 'void'?",
+        "opcion_a": "int",
+        "opcion_b": "bool",
+        "opcion_c": "Nada",
+        "opcion_d": "char",
+        "respuesta_correcta": "C",
+        "explicacion": "Las funciones 'void' no devuelven ningún valor."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 10,
+      "fields": {
+        "nivel": "AVANZADO",
+        "pregunta": "¿Cuál es el resultado de: `10 / 4` en C++?",
+        "opcion_a": "2.5",
+        "opcion_b": "2",
+        "opcion_c": "4",
+        "opcion_d": "Error",
+        "respuesta_correcta": "B",
+        "explicacion": "Si ambos operandos son enteros, se descarta el decimal: 10 / 4 = 2."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 11,
+      "fields": {
+        "nivel": "AVANZADO",
+        "pregunta": "¿Qué hace el operador '++' en C++?",
+        "opcion_a": "Resta 1",
+        "opcion_b": "Suma 2",
+        "opcion_c": "Suma 1",
+        "opcion_d": "Duplica el valor",
+        "respuesta_correcta": "C",
+        "explicacion": "'++' incrementa el valor de una variable en 1."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 12,
+      "fields": {
+        "nivel": "AVANZADO",
+        "pregunta": "¿Qué significa el siguiente código?\n\n```cpp\nint x = 5;\nint* p = &x;\n```",
+        "opcion_a": "Declara un arreglo",
+        "opcion_b": "Declara una constante",
+        "opcion_c": "Declara un puntero a x",
+        "opcion_d": "Hace una multiplicación",
+        "respuesta_correcta": "C",
+        "explicacion": "'p' es un puntero que guarda la dirección de memoria de 'x'."
+      }
+    },
+    {
+      "model": "users.preguntaevaluacion",
+      "pk": 13,
+      "fields": {
+        "nivel": "AVANZADO",
+        "pregunta": "¿Para qué se usa la directiva `#include` en C++?",
+        "opcion_a": "Para declarar variables",
+        "opcion_b": "Para incluir librerías",
+        "opcion_c": "Para definir funciones",
+        "opcion_d": "Para hacer comentarios",
+        "respuesta_correcta": "B",
+        "explicacion": "'#include' sirve para importar librerías como iostream o cmath."
+      }
+    }
+  ]
+  

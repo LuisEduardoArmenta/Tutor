@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-^mew94w&v7(5$008g8z0f=v7k0g)-*=!*@w7h8zki$&9ql2j2j'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# API KEY for Google Gemini
+GEMINI_API_KEY = "AIzaSyCYF0dlWP3xB39Bl1mwNo2Wvro3FWUskhQ"
 
 # Application definition
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'users',
+    'evaluador',
 ]
 
 MIDDLEWARE = [
@@ -171,3 +176,17 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 }
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tutorvirtualdev@gmail.com'
+EMAIL_HOST_PASSWORD = 'egse pxve awzl izss'
+DEFAULT_FROM_EMAIL = 'Tutor C++ <tutorvirtualdev@gmail.com>'
+EMAIL_USE_SSL = False
+EMAIL_TIMEOUT = 10
+
+# Frontend URL for password reset
+FRONTEND_URL = 'http://localhost:4200'

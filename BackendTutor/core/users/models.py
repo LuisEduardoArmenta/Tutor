@@ -16,6 +16,10 @@ class User(AbstractUser):
         null=True,
         blank=True
     )
+    puntos_experiencia = models.PositiveIntegerField(default=0, help_text="Experiencia acumulada en puntos")
+
+
+
 
 class PreguntaEvaluacion(models.Model):
     NIVELES = [

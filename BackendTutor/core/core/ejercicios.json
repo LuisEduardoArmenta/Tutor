@@ -1,0 +1,242 @@
+[
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Hola Mundo",
+      "enunciado": "Imprime 'Hola Mundo' en pantalla.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { cout << \"Hola Mundo\"; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Suma de dos números",
+      "enunciado": "Lee dos enteros e imprime su suma.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << a + b; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Restar dos números",
+      "enunciado": "Lee dos números y muestra la resta del primero menos el segundo.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << a - b; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Producto de dos números",
+      "enunciado": "Lee dos enteros e imprime su producto.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << a * b; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "División entera",
+      "enunciado": "Lee dos enteros y muestra el resultado de la división entera del primero entre el segundo.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << a / b; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Módulo (residuo)",
+      "enunciado": "Dado dos enteros, imprime el residuo de dividir el primero por el segundo.",
+      "nivel": "NO_EXPERIENCIA",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << a % b; return 0; }",
+      "puntos_xp": 10
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Número par o impar",
+      "enunciado": "Dado un número entero, determina si es par o impar.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; cin >> n; cout << (n % 2 == 0 ? \"Par\" : \"Impar\"); return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Mayor de dos números",
+      "enunciado": "Lee dos enteros e imprime el mayor.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin >> a >> b; cout << (a > b ? a : b); return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Rango de edad",
+      "enunciado": "Determina si una persona es menor de edad (menos de 18), adulto (18 a 59) o adulto mayor (60+).",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int edad; cin >> edad; if (edad < 18) cout << \"Menor de edad\"; else if (edad < 60) cout << \"Adulto\"; else cout << \"Adulto mayor\"; return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Contador del 1 al N",
+      "enunciado": "Lee un número N e imprime los números del 1 al N usando un ciclo.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; cin >> n; for(int i=1; i<=n; ++i) cout << i << \" \"; return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Sumar números del 1 al N",
+      "enunciado": "Lee un número N e imprime la suma de los números del 1 al N.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n, suma = 0; cin >> n; for(int i=1; i<=n; ++i) suma += i; cout << suma; return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Tabla de multiplicar",
+      "enunciado": "Imprime la tabla de multiplicar del número ingresado.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; cin >> n; for(int i=1; i<=10; ++i) cout << n << \" x \" << i << \" = \" << n*i << endl; return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Contar hasta cero",
+      "enunciado": "Lee números enteros hasta que el usuario ingrese cero.",
+      "nivel": "PRINCIPIANTE",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; while (cin >> n && n != 0) { cout << n << endl; } return 0; }",
+      "puntos_xp": 15
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Suma con arreglos",
+      "enunciado": "Lee N números y muestra la suma total usando un arreglo.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n, suma = 0; cin >> n; int arr[n]; for(int i=0;i<n;++i) cin >> arr[i]; for(int i=0;i<n;++i) suma += arr[i]; cout << suma; return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Número mayor de un arreglo",
+      "enunciado": "Lee N números e imprime el mayor.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; cin >> n; int arr[n]; for(int i=0;i<n;++i) cin >> arr[i]; int max = arr[0]; for(int i=1;i<n;++i) if(arr[i] > max) max = arr[i]; cout << max; return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Contar pares en un arreglo",
+      "enunciado": "Cuenta cuántos números pares hay en un arreglo.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n, count = 0; cin >> n; int arr[n]; for(int i=0;i<n;++i) { cin >> arr[i]; if(arr[i] % 2 == 0) count++; } cout << count; return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Promedio de notas",
+      "enunciado": "Lee las notas de N estudiantes y muestra el promedio.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n; double suma = 0; cin >> n; double notas[n]; for(int i=0;i<n;++i) { cin >> notas[i]; suma += notas[i]; } cout << suma / n; return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Palabra palíndroma",
+      "enunciado": "Verifica si una palabra es palíndroma (se lee igual al revés).",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\n#include <string>\nusing namespace std;\nint main() { string s; cin >> s; string r = string(s.rbegin(), s.rend()); cout << (s == r ? \"Si\" : \"No\"); return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Buscar número en arreglo",
+      "enunciado": "Lee N números y un número X, indica si X está presente.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n,x; bool found=false; cin >> n; int arr[n]; for(int i=0;i<n;++i) cin >> arr[i]; cin >> x; for(int i=0;i<n;++i) if(arr[i]==x) found=true; cout << (found ? \"SI\" : \"NO\"); return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Convertir a mayúsculas",
+      "enunciado": "Convierte una palabra a mayúsculas.",
+      "nivel": "INTERMEDIO",
+      "solucion_esperada": "#include <iostream>\n#include <string>\nusing namespace std;\nint main() { string s; cin >> s; for(char &c : s) c = toupper(c); cout << s; return 0; }",
+      "puntos_xp": 20
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Factorial recursivo",
+      "enunciado": "Calcula el factorial de un número usando recursión.",
+      "nivel": "AVANZADO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint factorial(int n) { return n <= 1 ? 1 : n * factorial(n - 1); }\nint main() { int n; cin >> n; cout << factorial(n); return 0; }",
+      "puntos_xp": 25
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Fibonacci iterativo",
+      "enunciado": "Imprime los primeros N números de la serie Fibonacci.",
+      "nivel": "AVANZADO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nint main() { int n,a=0,b=1,c; cin>>n; for(int i=0;i<n;++i) { cout << a << \" \"; c=a+b; a=b; b=c; } return 0; }",
+      "puntos_xp": 25
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Buscar binaria (ordenado)",
+      "enunciado": "Implementa búsqueda binaria sobre un arreglo ordenado.",
+      "nivel": "AVANZADO",
+      "solucion_esperada": "#include <iostream>\nusing namespace std;\nbool buscar(int arr[], int n, int x) { int l=0,r=n-1; while(l<=r){int m=(l+r)/2;if(arr[m]==x)return true;if(arr[m]<x)l=m+1;else r=m-1;}return false; }\nint main(){int n,x;cin>>n;int arr[n];for(int i=0;i<n;++i)cin>>arr[i];cin>>x;cout<<(buscar(arr,n,x)?\"SI\":\"NO\");return 0;}",
+      "puntos_xp": 25
+    }
+  },
+  {
+    "model": "evaluador.ejercicio",
+    "fields": {
+      "titulo": "Estructura Persona",
+      "enunciado": "Define una estructura Persona con nombre y edad, y muestra sus datos.",
+      "nivel": "AVANZADO",
+      "solucion_esperada": "#include <iostream>\n#include <string>\nusing namespace std;\nstruct Persona { string nombre; int edad; };\nint main() { Persona p; cin >> p.nombre >> p.edad; cout << p.nombre << \" tiene \" << p.edad << \" años.\"; return 0; }",
+      "puntos_xp": 25
+    }
+  }
+] 

@@ -11,6 +11,11 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.hashers import check_password
 from django.db.models import Q
 import random
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
+from django.conf import settings
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes
 
 from .models import (
     PreguntaEvaluacion,
@@ -310,3 +315,139 @@ class CambiarPasswordView(generics.GenericAPIView):
         user.set_password(new_password)
         user.save()
         return Response({'message': 'Contraseña actualizada correctamente'})
+    
+#Olvidaste contrase;a
+
+
+class ForgotPasswordView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = request.data.get('email')
+        if not email:
+            return Response(
+                {'error': 'El correo electrónico es requerido'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            user = User.objects.get(email=email)
+            # Generar token
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            
+            # Construir el enlace de recuperación
+            reset_url = f"{settings.FRONTEND_URL}/reset-password/{uid}/{token}"
+            
+            # Enviar correo electrónico
+            subject = 'Recuperación de contraseña - Tutor C++'
+            message = f'''
+            Estimado/a {user.first_name},
+
+            Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en Tutor C++.
+
+            Para restablecer tu contraseña, por favor haz clic en el siguiente enlace:
+            {reset_url}
+
+            Este enlace es válido por 24 horas.
+
+            Si no solicitaste este cambio, por favor ignora este correo electrónico.
+            Tu cuenta permanecerá segura y no se realizarán cambios.
+
+            Atentamente,
+            El equipo de Tutor C++
+            '''
+            
+            html_message = f'''
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #333;">Recuperación de contraseña</h2>
+                <p>Estimado/a {user.first_name},</p>
+                <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en Tutor C++.</p>
+                <p>Para restablecer tu contraseña, por favor haz clic en el siguiente enlace:</p>
+                <p style="margin: 20px 0;">
+                    <a href="{reset_url}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                        Restablecer contraseña
+                    </a>
+                </p>
+                <p>Este enlace es válido por 24 horas.</p>
+                <p>Si no solicitaste este cambio, por favor ignora este correo electrónico.<br>
+                Tu cuenta permanecerá segura y no se realizarán cambios.</p>
+                <hr style="border: 1px solid #eee; margin: 20px 0;">
+                <p style="color: #666; font-size: 12px;">
+                    Atentamente,<br>
+                    El equipo de Tutor C++
+                </p>
+            </div>
+            '''
+            
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+                html_message=html_message
+            )
+            
+            return Response(
+                {'message': 'Se han enviado las instrucciones a tu correo electrónico'},
+                status=status.HTTP_200_OK
+            )
+            
+        except User.DoesNotExist:
+            # Por seguridad, no revelamos si el correo existe o no
+            return Response(
+                {'message': 'Si el correo existe, recibirás las instrucciones para recuperar tu contraseña'},
+                status=status.HTTP_200_OK
+            )
+        except Exception as e:
+            return Response(
+                {'error': 'Error al procesar la solicitud'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+class ResetPasswordView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        token = request.data.get('token')
+        new_password = request.data.get('new_password')
+        uid = request.data.get('uid')
+
+        if not all([token, new_password, uid]):
+            return Response(
+                {'error': 'Todos los campos son requeridos'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            # Decodificar el uid
+            user_id = urlsafe_base64_decode(uid).decode()
+            user = User.objects.get(pk=user_id)
+            
+            # Verificar el token
+            if not default_token_generator.check_token(user, token):
+                return Response(
+                    {'error': 'El enlace de recuperación no es válido o ha expirado'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+            # Actualizar la contraseña
+            user.set_password(new_password)
+            user.save()
+            
+            return Response(
+                {'message': 'Contraseña actualizada exitosamente'},
+                status=status.HTTP_200_OK
+            )
+            
+        except (TypeError, ValueError, User.DoesNotExist):
+            return Response(
+                {'error': 'El enlace de recuperación no es válido'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except Exception as e:
+            return Response(
+                {'error': 'Error al procesar la solicitud'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
